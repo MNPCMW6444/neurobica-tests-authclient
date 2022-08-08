@@ -56,15 +56,11 @@ router.post("/", async (req, res) => {
     );
 
     res
-      .cookie(
-        "token",
-        token,
-        process.env.NODE_ENV === "production"
-          ? {
-              httpOnly: true,
-            }
-          : { httpOnly: true, sameSite: "none", secure: true }
-      )
+      .cookie("token", token, {
+        httpOnly: true,
+
+        secure: true,
+      })
       .send();
   } catch (err) {
     res.status(500).send();
@@ -110,15 +106,11 @@ router.post("/login", async (req, res) => {
     );
 
     res
-      .cookie(
-        "token",
-        token,
-        process.env.NODE_ENV === "production"
-          ? {
-              httpOnly: true,
-            }
-          : { httpOnly: true, sameSite: "none", secure: true }
-      )
+      .cookie("token", token, {
+        httpOnly: true,
+
+        secure: true,
+      })
       .send();
   } catch (err) {
     console.log(err);
@@ -143,21 +135,12 @@ router.get("/loggedIn", (req, res) => {
 router.get("/logOut", (req, res) => {
   try {
     res
-      .cookie(
-        "token",
-        "",
-        process.env.NODE_ENV === "production"
-          ? {
-              httpOnly: true,
-              expires: new Date(0),
-            }
-          : {
-              httpOnly: true,
-              sameSite: "none",
-              secure: true,
-              expires: new Date(0),
-            }
-      )
+      .cookie("token", "", {
+        httpOnly: true,
+
+        secure: true,
+        expires: new Date(0),
+      })
       .send();
   } catch (err) {
     return res.json(null);
