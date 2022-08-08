@@ -1,1 +1,1 @@
-export default "https://neurobica-authtest.herokuapp.com";
+export default "https://test.neurobica.online";
