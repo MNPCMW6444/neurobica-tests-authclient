@@ -1,8 +1,17 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "build": "react-scripts build"
+  },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.5",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
@@ -13,11 +22,8 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   },
   "eslintConfig": {
     "extends": [
